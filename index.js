@@ -12,8 +12,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Ocultar la imagen ampliada al hacer clic en cualquier parte del overlay
-    overlay.addEventListener('click', function () {
-        overlay.style.display = 'none'; // Ocultar el overlay
-        overlayImage.src = ''; // Limpiar la imagen ampliada
+    overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) { // Solo se cierra si se hace clic en el área oscura (no en la imagen)
+            overlay.style.display = 'none'; // Ocultar el overlay
+            overlayImage.src = ''; // Limpiar la imagen ampliada
+        }
     });
 });
