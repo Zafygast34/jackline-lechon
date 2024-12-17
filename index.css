@@ -1,0 +1,111 @@
+/* Importamos una fuente para el estilo poético */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playfair Display', serif; /* Fuente elegante */
+    background-color: #f3e5d8; /* Color pergamino claro */
+    color: #5c3d2e; /* Tono marrón antiguo */
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Encabezado */
+header {
+    background-color: #8d6e63; /* Marrón madera */
+    color: #f8f4e3; /* Beige claro */
+    padding: 20px 10px;
+    border-bottom: 5px solid #6d4c41; /* Borde marrón oscuro */
+}
+
+.titulo-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive; /* Fuente manuscrita */
+    font-size: 3rem;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+}
+
+/* Secciones */
+section {
+    margin: 30px auto;
+    padding: 10px;
+    max-width: 1200px;
+}
+
+h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #6d4c41; /* Marrón oscuro */
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px #bfa08e; /* Sutil sombra */
+}
+
+/* Galería de imágenes */
+.galeria {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.galeria img {
+    width: 300px;
+    height: auto;
+    border: 2px solid #a1887f; /* Bordes tipo pergamino */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Overlay para imágenes ampliadas */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    border: 5px solid #f3e5d8; /* Borde pergamino */
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Pie de página */
+footer {
+    margin-top: 20px;
+    background-color: #8d6e63; /* Marrón madera */
+    color: #f8f4e3; /* Beige claro */
+    padding: 10px;
+    border-top: 3px solid #6d4c41;
+}
