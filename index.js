@@ -3,7 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const overlay = document.querySelector('#overlay'); // El contenedor overlay
     const overlayImage = document.querySelector('#imagen-ampliada'); // Imagen dentro del overlay
 
-    // Mostrar la imagen ampliada al hacer clic
+    // Asegurémonos de que el overlay esté oculto al cargar la página
+    overlay.style.display = 'none';
+
+    // Mostrar la imagen ampliada al hacer clic en una imagen
     images.forEach(img => {
         img.addEventListener('click', function () {
             overlay.style.display = 'flex'; // Mostrar el overlay
@@ -11,9 +14,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Ocultar la imagen ampliada al hacer clic en cualquier parte del overlay
-    overlay.addEventListener('click', function () {
-        overlay.style.display = 'none'; // Ocultar el overlay
-        overlayImage.src = ''; // Limpiar la imagen ampliada
+    // Ocultar la imagen ampliada al hacer clic en cualquier parte del overlay (fuera de la imagen)
+    overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) { // Solo se cierra si se hace clic en el área oscura (no en la imagen)
+            overlay.style.display = 'none'; // Ocultar el overlay
+            overlayImage.src = ''; // Limpiar la imagen ampliada
+        }
     });
 });
