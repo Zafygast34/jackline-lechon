@@ -1,20 +1,19 @@
-<script>
 document.addEventListener("DOMContentLoaded", function () {
-    const images = document.querySelectorAll('.galeria img'); // Todas las imágenes
-    const overlay = document.querySelector('.overlay'); // El contenedor del overlay
-    const overlayImage = document.querySelector('.overlay img'); // La imagen dentro del overlay
+    const images = document.querySelectorAll('.galeria img'); // Selecciona todas las imágenes
+    const overlay = document.querySelector('#overlay'); // El contenedor overlay
+    const overlayImage = document.querySelector('#imagen-ampliada'); // Imagen dentro del overlay
 
-    // Mostrar la imagen en grande cuando se hace clic
+    // Mostrar la imagen ampliada al hacer clic
     images.forEach(img => {
         img.addEventListener('click', function () {
             overlay.style.display = 'flex'; // Mostrar el overlay
-            overlayImage.src = img.src; // Asignar la imagen seleccionada
+            overlayImage.src = img.src; // Asignar la imagen seleccionada al overlay
         });
     });
 
-    // Cerrar la imagen ampliada cuando se hace clic en el overlay
+    // Ocultar la imagen ampliada al hacer clic en cualquier parte del overlay
     overlay.addEventListener('click', function () {
         overlay.style.display = 'none'; // Ocultar el overlay
+        overlayImage.src = ''; // Limpiar la imagen ampliada
     });
 });
-</script>
