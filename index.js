@@ -1,18 +1,20 @@
-// Seleccionamos todas las imágenes y el contenedor overlay
-const imagenes = document.querySelectorAll('.imagen-click');
-const overlay = document.getElementById('overlay');
-const imagenAmpliada = document.getElementById('imagen-ampliada');
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll('.galeria img'); // Todas las imágenes
+    const overlay = document.querySelector('.overlay'); // El contenedor del overlay
+    const overlayImage = document.querySelector('.overlay img'); // La imagen dentro del overlay
 
-// Función para mostrar la imagen ampliada
-imagenes.forEach((imagen) => {
-    imagen.addEventListener('click', () => {
-        imagenAmpliada.src = imagen.src; // Mostrar la imagen clickeada
-        overlay.style.display = 'flex'; // Mostrar el overlay
+    // Mostrar la imagen en grande cuando se hace clic
+    images.forEach(img => {
+        img.addEventListener('click', function () {
+            overlay.style.display = 'flex'; // Mostrar el overlay
+            overlayImage.src = img.src; // Asignar la imagen seleccionada
+        });
+    });
+
+    // Cerrar la imagen ampliada cuando se hace clic en el overlay
+    overlay.addEventListener('click', function () {
+        overlay.style.display = 'none'; // Ocultar el overlay
     });
 });
-
-// Función para cerrar la imagen al hacer clic fuera de ella
-overlay.addEventListener('click', () => {
-    overlay.style.display = 'none';
-    imagenAmpliada.src = ''; // Limpiar la imagen
-});
+</script>
